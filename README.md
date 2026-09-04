@@ -3,4 +3,4 @@ This repository contains a collection of projects for analyzing various types of
 
 Projects....
 
-1. [Analyzing DNS Logs](https://medium.com/p/660570803eda/edit) : This project is all about how to analze DNS log files using Splunk. Project guides how to upload sample log files, extracting relevant fields, analyzing DNS query patters, detecting anomalies, and monitoring DNS traffic.
+1. [Analyzing DNS Logs]() : This project is all about how to analze DNS log files using Splunk. Project guides how to upload sample log files, extracting relevant fields, analyzing DNS query patters, detecting anomalies, and monitoring DNS traffic.

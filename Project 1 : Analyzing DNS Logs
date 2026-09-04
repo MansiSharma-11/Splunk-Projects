@@ -1,1 +1,88 @@
+Analyzing DNS Logs
 
+Introduction
+
+All computers on the Internet, from your smart phone or laptop to the servers that serve content for massive retail websites, find and communicate with one another by using numbers. These numbers are known as IP addresses. When you open a web browser and go to a website, you don't have to remember and enter a long number. Instead, you can enter a domain name like example.com and still end up in the right place. 
+
+DNS, or the Domain Name System, translates human readable domain names (for example, www.medium.com) to machine readable IP addresses (for example, 192.0.2.44).
+
+Prerequisties
+Ensure the following:
+. Splunk Enterprise is installed and configured (Splunk Installation & Setup Guide).
+. DNS log data sources are configured to forward logs to Splunk.
+
+Steps to upload Sample DNS Log File on Splunk
+
+1. Create Sample DNS Logs
+
+First, prepare a sample DNS log file in .txt or another suitable format. Include useful information such as:
+
+.Source IP
+.Destination IP
+.Domain/FQDN
+.Query type
+.Response code
+
+Save the file somewhere you can easily access it.
+
+2. Add the Logs to Splunk
+
+.Open the Splunk Web Interface.
+.Go to Settings → Add Data. (Or can use quick links on home page).
+.Select Upload.
+.Choose your DNS log file.
+
+3. Configure the Log
+
+Under Source Type, select dns or create a custom type such as dns_sample.
+
+Then check the Index, Host, and Source Type settings to make sure they match your log file.
+
+4. Upload and Confirm
+
+Click Review and check the configuration. If everything looks correct, click Submit.
+
+To make sure the data was added successfully, search:
+
+index=<your_index> sourcetype=dns_sample
+
+
+Analyzing DNS Logs in Splunk
+
+1. View DNS Events
+
+Start by searching for your DNS records:
+
+index=* sourcetype=dns_sample
+
+2. Find Important DNS Fields
+
+Look for fields such as src_ip, dest_ip, fqdn, query_type, and response_code.
+
+You can also filter events containing common DNS terms:
+
+index=* sourcetype=dns_sample | regex _raw="(?i)\b(dns|domain|query|response|port 53)\b"
+
+3. Look for Unusual Activity
+
+To find domains that appear frequently, use:
+
+index=* sourcetype=dns_sample | stats count by fqdn
+
+A sudden increase in requests to a particular domain may require further investigation.
+
+4. Find the Most Active Sources
+
+To see which IP addresses generate the most DNS queries:
+
+index=* sourcetype=dns_sample | top fqdn, src_ip
+
+5. Check Suspicious Domains
+
+If a domain looks unusual, investigate it using a threat-intelligence or reputation service such as VirusTotal.
+
+For example:
+
+index=* sourcetype=dns_sample fqdn="maliciousdomain.com"
+
+This helps an analyst decide whether the domain may be connected to malicious activity.
