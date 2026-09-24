@@ -5,7 +5,6 @@ Projects....
 
 1. [Analyzing DNS Logs] : This project is all about how to analze DNS log files using Splunk. Project shows how to upload sample log files, extracting relevant fields, analyzing DNS query patters, detecting anomalies, and monitoring DNS traffic.
  
-2. [Analyzing HTTP Logs] : This project is all about how to analyze HTTP log files using Splunk. Project shows how to upload sample log files, extract relevant fields, detect anomalies and monitoring HTTP traffic.
+2. [Analyzing SSH Logs] : This project is all about how to analyze SSH log files using Splunk. Project shows how to upload sample log files, extract relevant fields, analyze SSH activity, detect anomalies.
 
-3. [Analyzing SSH Logs] : This project is all about how to analyze SSH log files using Splunk. Project shows how to upload sample log files, extract relevant fields, analyze SSH activity, detect anomalies.
-
+3. [Analyzing HTTP Logs] : This project is all about how to analyze HTTP log files using Splunk. Project shows how to upload sample log files, extract relevant fields, detect anomalies and monitoring HTTP traffic.
