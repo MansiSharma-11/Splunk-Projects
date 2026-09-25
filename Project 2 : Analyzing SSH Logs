@@ -1,8 +1,0 @@
-SSH is one of the most common protocols in any enterprise environment, and one of the most frequently targeted by attackers.
-SSH, stands for Secure Shell, is a cryptographic network protocol that establishes an encrypted connection between computers to allow for secure remote access over an unsecured network. 
-It operates on TCP port 22 by default and is most notably used by system administrators and developers for remote command-line login and secure data execution.
-
-Prerequisties
-Ensure the following:
-. Splunk Enterprise is installed and configured (Splunk Installation & Setup Guide).
-. SSH log data sources are configured to forward logs to Splunk.
