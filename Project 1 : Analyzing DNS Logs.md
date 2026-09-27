@@ -23,7 +23,7 @@ Ensure the following:
 
 First, prepare a sample DNS log file in `.txt` or another suitable format. 
 
-Don't have a sample file handy? You can grab a public one here: [dns.log.gz](https://secrepo.com/maccdc2012/dns.log.gz). Download it, and you'll have a real HTTP log ready to upload.
+Don't have a sample file handy? You can grab a public one here: [dns.log.gz](https://secrepo.com/maccdc2012/dns.log.gz). Download it, and you'll have a real DNS log ready to upload.
 
 
 Include useful information such as:
