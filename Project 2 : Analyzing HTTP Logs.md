@@ -17,6 +17,8 @@ Digging into these logs with Splunk lets security analysts:
 - A working Splunk Enterprise setup.
 - A sample HTTP log file ready to go (e.g., `http.log`).
 
+Don't have a sample file handy? You can grab a public one here: [MACCDC 2012 http.log.gz](https://secrepo.com/maccdc2012/http.log.gz). Download it, and you'll have a real HTTP log ready to upload.
+
 ---
 
 ## Steps to Upload Sample HTTP Log Files to Splunk
