@@ -45,7 +45,7 @@ Save the file somewhere you can easily access it.
 
 ### 3. Configure the Log
 
-Under **Source Type**, select `dns` or create a custom type such as `dns_sample`.
+Under **Source Type**, select `dns` or create a custom type such as `dns_log`.
 
 Then check the **Index**, **Host**, and **Source Type** settings to make sure they match your log file.
 
@@ -56,7 +56,7 @@ Click **Review** and check the configuration. If everything looks correct, click
 To make sure the data was added successfully, search:
 
 ```spl
-index=<your_index> sourcetype=dns_sample
+index=<your_index> sourcetype=dns_log
 ```
 
 ---
@@ -68,7 +68,7 @@ index=<your_index> sourcetype=dns_sample
 Start by searching for your DNS records:
 
 ```spl
-index=* sourcetype=dns_sample
+index=* sourcetype=dns_log
 ```
 
 ### 2. Find Important DNS Fields
@@ -78,7 +78,7 @@ Look for fields such as `src_ip`, `dest_ip`, `fqdn`, `query_type`, and `response
 You can also filter events containing common DNS terms:
 
 ```spl
-index=* sourcetype=dns_sample | regex _raw="(?i)\b(dns|domain|query|response|port 53)\b"
+index=* sourcetype=dns_log | regex _raw="(?i)\b(dns|domain|query|response|port 53)\b"
 ```
 
 ### 3. Look for Unusual Activity
@@ -86,7 +86,7 @@ index=* sourcetype=dns_sample | regex _raw="(?i)\b(dns|domain|query|response|por
 To find domains that appear frequently, use:
 
 ```spl
-index=* sourcetype=dns_sample | stats count by fqdn
+index=* sourcetype=dns_log | stats count by fqdn
 ```
 
 A sudden increase in requests to a particular domain may require further investigation.
@@ -96,7 +96,7 @@ A sudden increase in requests to a particular domain may require further investi
 To see which IP addresses generate the most DNS queries:
 
 ```spl
-index=* sourcetype=dns_sample | top fqdn, src_ip
+index=* sourcetype=dns_log | top fqdn, src_ip
 ```
 
 ### 5. Check Suspicious Domains
@@ -106,7 +106,7 @@ If a domain looks unusual, investigate it using a threat-intelligence or reputat
 For example:
 
 ```spl
-index=* sourcetype=dns_sample fqdn="maliciousdomain.com"
+index=* sourcetype=dns_log fqdn="maliciousdomain.com"
 ```
 
 This helps an analyst decide whether the domain may be connected to malicious activity.
